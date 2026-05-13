@@ -8,27 +8,27 @@ git 'https://github.com/tushardk058/ci-node-app.git'
 }
 stage('Install Dependencies') {
 steps {
-bat 'npm install'
+sh 'npm install'
 }
 }
 stage('Run Application') {
 steps {
-bat 'node app.js'
+sh 'node app.js'
 }
 }
 stage('Run Tests') {
 steps {
-bat 'npm test'
+sh 'npm test'
 }
 }
 stage('Build Docker Image') {
 steps {
-bat 'docker build -t ci-node-app .'
+sh 'docker build -t ci-node-app .'
 }
 }
 stage('Run Docker Container') {
 steps {
-bat 'docker run -d -p 3000:3000 --name ci-container ci-node-app'
+sh 'docker run -d -p 3000:3000 --name ci-container ci-node-app'
 }
 }
 }
