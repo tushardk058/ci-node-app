@@ -7,20 +7,25 @@ stage('Clone') {
             url: 'https://github.com/tushardk058/ci-node-app.git'
     }
 }
-stage('Install') {
-steps {
-bat 'npm install'
-}
-}
-stage('Run App') {
-steps {
-bat 'node app.js'
-}
-}
-stage('Test') {
-steps {
-bat 'npm test'
-}
-}
+    stages {
+
+        stage('Install') {
+            steps {
+                sh 'npm install'
+            }
+        }
+
+        stage('Run App') {
+            steps {
+                sh 'node app.js'
+            }
+        }
+
+        stage('Test') {
+            steps {
+                sh 'npm test'
+            }
+        }
+    }
 }
 }
