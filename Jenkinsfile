@@ -2,9 +2,10 @@ pipeline {
 agent any
 stages {
 stage('Clone') {
-steps {
-git 'https://github.com/tushardk058/ci-node-app.git'
-}
+    steps {
+        git branch: 'main',
+            url: 'https://github.com/tushardk058/ci-node-app.git'
+    }
 }
 stage('Install') {
 steps {
