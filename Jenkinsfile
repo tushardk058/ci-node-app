@@ -3,7 +3,7 @@ agent any
 stages {
 stage('Clone') {
 steps {
-git https://github.com/tushardk058/ci-node-app.git
+git 'https://github.com/tushardk058/ci-node-app.git'
 }
 }
 stage('Install') {
